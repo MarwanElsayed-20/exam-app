@@ -16,7 +16,7 @@ export default function CustomButton({ text, type = "submit", kind = "primary", 
 	hover:shadow-[0px_18px_30px_0px_rgba(47,28,28,0.2)] hover:scale-105 transition-all duration-300 border ${
 		kind === "primary" ? "bg-primary-default text-white" : "bg-white text-primary-default  border-primary-default"
 	}
-	${loading ? `cursor-not-allowed bg-opacity-50 ${kind === "primary" && "bg-primary-background-dark !text-primary-default border-2"}` : "cursor-pointer"}	
+	${loading ? `cursor-not-allowed ${kind === "primary" && "!bg-primary-background-dark !text-primary-default border-2"}` : "cursor-pointer"}	
 	`;
 	const identifier = typeof text === "string" ? text : <Image src={text} alt={alt} width={20} height={20} />;
 	return (
