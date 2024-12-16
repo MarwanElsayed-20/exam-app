@@ -44,10 +44,6 @@ export default function CustomForm({ formDetails }: Props) {
 
 		const formData = new FormData(e.currentTarget);
 
-		// for (const [key, value] of formData.entries()) {
-		// 	console.log(`Key: ${key}, Value: ${value}`);
-		// }
-
 		const dataToSend = {
 			email: formData.get("email") as string,
 			password: formData.get("password") as string,
