@@ -22,7 +22,9 @@ export default function CustomInput({ type, placeholder, name, id, value }: prop
 		<>
 			<div className='relative'>
 				<input
-					className='bg-[#F9F9F9] rounded-lg w-full p-3 text-primary-text-light text-sm shadow-[0px_10px_20px_0px_rgba(68,97,242,0.05)] border focus-visible:border-primary-default focus-visible:border-2 outline-none'
+					className={`${
+						name === "search" ? "bg-white" : "bg-[#F9F9F9]"
+					} rounded-lg w-full p-3 text-primary-text-light text-sm shadow-[0px_10px_20px_0px_rgba(68,97,242,0.05)] border focus-visible:border-primary-default focus-visible:border-2 outline-none`}
 					placeholder={placeholder}
 					type={type === "password" ? (showPassword ? "text" : "password") : type}
 					name={name}
