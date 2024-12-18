@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 import { toast } from "react-toastify";
 import QuizCard from "./QuizCard";
+import Link from "next/link";
 
 type props = {
 	quizzes: {
@@ -33,8 +34,10 @@ export default function Quizzes({ quizzes }: props) {
 				</div>
 				<div className='grid grid-cols-3 gap-5'>
 					{quizzes?.subjects?.map((subject, index) => (
-						<div key={index} className='rounded-lg'>
-							<QuizCard subject={subject} />
+						<div key={index}>
+							<Link href={`/dashboard/quizzes/${subject._id}/exams`}>
+								<QuizCard subject={subject} />
+							</Link>
 						</div>
 					))}
 				</div>
