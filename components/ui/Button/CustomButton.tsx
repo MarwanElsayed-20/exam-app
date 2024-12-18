@@ -6,15 +6,17 @@ import React from "react";
 
 type Props = {
 	text: string | StaticImageData;
+	className?: string;
 	type?: "submit" | "reset" | "button";
 	kind?: "primary" | "secondary";
 	href?: string;
 	alt?: string;
 	loading?: boolean;
+	onClick?: () => void;
 };
 
-export default function CustomButton({ text, type = "submit", kind = "primary", href, alt = "button", loading = false }: Props) {
-	const classes = `shadow-[0px_18px_30px_0px_rgba(47,28,28,0.1)] p-3 gap-2 flex justify-center items-center rounded-lg w-full text-sm h-full
+export default function CustomButton({ text, className, type = "submit", kind = "primary", href, alt = "button", loading = false, onClick }: Props) {
+	const classes = `${className} shadow-[0px_18px_30px_0px_rgba(47,28,28,0.1)] p-3 gap-2 flex justify-center items-center rounded-lg w-full text-sm h-full
 	hover:shadow-[0px_18px_30px_0px_rgba(47,28,28,0.2)] hover:scale-105 transition-all duration-300 border ${
 		kind === "primary" ? "bg-primary-default text-white" : "bg-white text-primary-default  border-primary-default"
 	}
@@ -29,7 +31,7 @@ export default function CustomButton({ text, type = "submit", kind = "primary", 
 						{identifier}
 					</Link>
 				) : (
-					<button className={classes} type={type} disabled={loading}>
+					<button className={classes} type={type} disabled={loading} onClick={onClick}>
 						{loading ? "Loading..." : identifier}
 					</button>
 				)}
