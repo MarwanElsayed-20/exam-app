@@ -4,6 +4,9 @@ const endpoints = {
 
 	// Subject
 	subjects: "/subjects",
+
+	// Exams
+	exams: "/exams",
 } as const;
 
 export default endpoints;
